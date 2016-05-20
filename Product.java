@@ -1,4 +1,4 @@
-class Product implements Comparable {
+class Product implements Comparable{
 
     private int price;
 
