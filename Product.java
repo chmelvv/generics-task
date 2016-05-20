@@ -1,15 +1,10 @@
-class Product implements Comparable {
+class Product implements Comparable<Product> {
 
     private int price;
 
     @Override
-    public int compareTo(Object that) {
-        if (that instanceof Product) {
-            Product thatProduct = (Product) that;
-            return this.price - thatProduct.getPrice();
-        } else {
-            throw new IllegalArgumentException();
-        }
+    public int compareTo(Product that) {
+        return this.price - that.getPrice();
     }
 
     public int getPrice() { return price; }
@@ -19,18 +14,12 @@ class Product implements Comparable {
     public String toString() { return "Product{price=" + price + '}'; }
 }
 
-class Phone extends Product implements Comparable {
+class Phone extends Product{
 
     private int memory;
 
-    @Override
-    public int compareTo(Object that) {
-        if (that instanceof Phone) {
-            Phone thatProduct = (Phone) that;
-            return this.memory - thatProduct.getMemory();
-        } else {
-            throw new IllegalArgumentException();
-        }
+    public int compareTo(Phone that) {
+            return this.memory - that.getMemory();
     }
 
     public int getMemory() { return memory; }
@@ -40,18 +29,12 @@ class Phone extends Product implements Comparable {
     public String toString() { return "Phone{memory=" + memory + '}'; }
 }
 
-class Camera extends Product implements Comparable {
+class Camera extends Product{
 
     private int megaPixels;
 
-    @Override
-    public int compareTo(Object that) {
-        if (that instanceof Camera) {
-            Camera thatProduct = (Camera) that;
-            return this.megaPixels - thatProduct.getMegaPixels();
-        } else {
-            throw new IllegalArgumentException();
-        }
+    public int compareTo(Camera that) {
+            return this.megaPixels - that.getMegaPixels();
     }
 
     public int getMegaPixels() { return megaPixels; }
