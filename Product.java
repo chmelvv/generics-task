@@ -26,7 +26,7 @@ class Phone extends Product{
 
     public void setMemory(int memory) { this.memory = memory; }
 
-    public String toString() { return "Phone{memory=" + memory + '}'; }
+    public String toString() { return "Phone{memory=" + memory + " price=" + this.getPrice() + '}'; }
 }
 
 class Camera extends Product{
@@ -41,6 +41,6 @@ class Camera extends Product{
 
     public void setMegaPixels(int megaPixels) { this.megaPixels = megaPixels; }
 
-    public String toString() { return "Camera{megaPixels=" + megaPixels + '}'; }
+    public String toString() { return "Camera{megaPixels=" + megaPixels + " price=" + this.getPrice() + '}'; }
 }
 
