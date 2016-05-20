@@ -21,12 +21,12 @@ public class Task {
         camera_2.setMegaPixels(18);
         camera_2.setPrice(550);
 
-        System.out.println(Util.min(camera_1, camera_2));
-        System.out.println(Util.min(phone_1, phone_2));
-        System.out.println(Util.min(product_1, product_2));
+        System.out.println(new Util<Camera>().min(camera_1, camera_2));
+        System.out.println(new Util<Phone>().min(phone_1, phone_2));
+        System.out.println(new Util<Product>().min(product_1, product_2));
 
-        System.out.println(Util.min(product_1, phone_1));  // compile error should be here!
-        System.out.println(Util.min(camera_1, phone_1));   // compile error should be here!
+        System.out.println(new Util<Phone>().min(product_1, phone_1));  // compile error should be here!
+        System.out.println(new Util<Camera>().min(camera_1, phone_1));   // compile error should be here!
     }
 }
 
